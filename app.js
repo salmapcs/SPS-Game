@@ -1,10 +1,14 @@
 let userScore =0;
-let compChoice =0;
+let compScore =0;
 
 // Get the element
 
 const choices =document.querySelectorAll(".choice")
 const msg = document.querySelector("#msg")
+const userScorePara =document.querySelector("#user-score")
+const compScorePara =document.querySelector("#comp-score")
+
+
 
 const ComputerChoice = () => {
     // rock,paper.choice
@@ -16,10 +20,10 @@ const ComputerChoice = () => {
 
 
 const playGame =(userChoice) => {
-    console.log("user choice =",userChoice)
+    // console.log("user choice =",userChoice)
     // generate comp choice 
     const compChoice = ComputerChoice()
-    console.log("computer choice is ",compChoice)
+    // console.log("computer choice is ",compChoice)
 
     if(userChoice === compChoice){
         // draw game
@@ -41,8 +45,6 @@ showWinner(userWin ,userChoice ,compChoice)
     }
 }
 
-
-
 choices.forEach((choice) =>{
     choice.addEventListener("click", () => {
         const userChoice = choice.getAttribute("id")
@@ -63,13 +65,20 @@ msg.style.backgroundColor ="black";
 
 const showWinner = (userWin ,userChoice ,compChoice )=>{
     if(userWin){
-        console.log("you win the game");
+        // chnge the score 
+        userScore++;
+        userScorePara.innerText =userScore
         msg.innerText =`You win the Game ! Your ${userChoice} beat ${compChoice}`;
         msg.style.backgroundColor ="green";
+
     }else{
-        console.log("you loss the game")
+        // chnge the score
+        compScore++;
+        compScorePara.innerText =compScore
         msg.innerText ="You loss the Game. Try Again !";;
         msg.style.backgroundColor ="red";
 
     }
 }
+
+
