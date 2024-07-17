@@ -5,9 +5,9 @@
   }
   
   h1 {
-    background-color: #d37f0a;
+    background-color: #79c8d6;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
-    height: 5rem;
     line-height: 5rem;
     font-size: 60px;
   }
@@ -23,7 +23,7 @@
   
   .choice:hover {
     cursor: pointer;
-    background-color: #081b31;
+    background-color: #828383;
   }
   
   img {
